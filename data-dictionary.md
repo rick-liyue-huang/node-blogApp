@@ -1,6 +1,7 @@
 
-### Data-dictionary used to match some data names and rules between database and front-end
+## Data-dictionary used to match some data names and rules between database and front-end
 
+### For the admin data 
 #### 1. mainpage:
 
     - banner:  
@@ -90,7 +91,15 @@
         admin_table
             ID 
             username varchar(64)
-            password varchar(32)           
+            password varchar(32)  
+
+### For the front interface
+
+/get_banners
+- [ID, title, description, href]
+
+/get_custom_evaluations
+- [ID, title, description, src]                  
 
 
 

@@ -44,7 +44,7 @@ server.engine('html', consolidate.ejs);
 // 4. route
 
 // for the normal web users
-server.use('/', require('./route/web.js')());
+server.use('/', require('./route/web/index.js')());
 
 // for the admin users
 server.use('/admin/', require('./route/admin/index.js')());
