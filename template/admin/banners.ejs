@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style media="screen">
+    .shadow {position:fixed; width:100%; height:100%; background:#000; opacity:0.3; filter:alpha(opacity:30);left:0; top: 0;}
+    .mod_dialog {width:300px; height:200px; border:1px solid black; background:#fff; position:fixed; left:50%; top:50%; margin-left:-150px; margin-top:-100px}
+    </style>
+    <title>Banners Setting Page</title>
+  </head>
+  <body>
+    <div class="page">
+      <% include components/top.admin.ejs %>
+      <div class="content-wrap">
+        <div>
+          <form action="?" method="post">
+            Title: <input type="text" name="title" /><br>
+            Description: <textarea name="description"></textarea><br>
+            Link: <input type="text" name="href" /><br>
+            <input type="submit" value="Add"/>
+          </form>
+        </div>
+        <table border="1" width="100%">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Link</th>
+              <th>Operate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(var i=0;i<banners.length;i++){ %>
+            <tr>
+              <td><%=banners[i].ID%></td>
+              <td><%=banners[i].title%></td>
+              <td><%=banners[i].description%></td>
+              <td><%=banners[i].href%></td>
+              <td>
+                <a href="?act=mod&id=<%=banners[i].ID%>">Modify</a>
+                <a href="?act=del&id=<%=banners[i].ID%>" onclick="return confirm('Are you sure to delete?')">Delete</a>
+              </td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+        <% if(typeof mod_data!='undefined'){ %>
+        <div class="shadow"></div>
+        <div class="mod_dialog">
+          <form action="?" method="post">
+            <input type="hidden" name="mod_id" value="<%= mod_data.ID %>" />
+            Title: <input type="text" name="title" value="<%= mod_data.title %>" /><br>
+            Description: <textarea name="description"><%= mod_data.description %></textarea><br>
+            Link: <input type="text" name="href" value="<%= mod_data.href %>" /><br>
+            <input type="submit" value="Modify"/>
+            <a href="/admin/banners">Cancel Modify</a>
+          </form>
+        </div>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>
