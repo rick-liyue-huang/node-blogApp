@@ -14,6 +14,8 @@ module.exports=function (){
     let username=req.body.username;
     let password=common.md5(req.body.password+common.MD5_suffix);
 
+    console.log(password);
+
     db.query(`SELECT * FROM admin_table WHERE username='${username}'`, (err, data)=>{
       if(err){
         console.error(err);
