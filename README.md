@@ -5,7 +5,7 @@ This project focuses on the server-end coding, combining the 'mysql' database an
 
 ### Project Start
 
-Firstly, need to create the 'blog' databse in 'Navicat' by 'blog.sql' file, and then need to firstly enter the admin page by click 'localhost:3000/admin', and input 'rick' for username and '123456' for password. Secondly, after input correctly, it will enter the default page 'localhost:3000/admin'. I realize two functions, 'banner setting' and 'custom setting'. You can enter to add the data or modify the data with 'blog' database. Finally, we also can enter normal user page 'localhost:3000/', to get the rendered normal front-end page, in which it contains the data from 'blog' data, but can not modify.
+Firstly, need to create the 'blog' databse in 'Navicat' by 'blog.sql' file, and then need to firstly enter the admin page by click 'localhost:3000/admin', and input 'rick' for username and '123456' for password. Secondly, after input correctly, it will enter the default page 'localhost:3000/admin'. I realize two functions, 'banner setting' and 'custom setting'. You can enter to add the data or modify the data with 'blog' database. Finally, we also can enter normal user page 'localhost:3000/', to get the rendered normal front-end page, in which it contains the data from 'blog' data, but can not modify. Inputing 'node server.js' to start the server end.
 
 ### project target
 
